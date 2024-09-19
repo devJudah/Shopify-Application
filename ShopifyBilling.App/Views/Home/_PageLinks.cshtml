@@ -1,0 +1,22 @@
+﻿@model HomeViewModel
+
+<div class="row">
+    <div class="col-sm-6 text-sm-left">
+        @if (Model.PreviousPage != null)
+        {
+            <a class="btn btn-link" asp-controller="Home" asp-action="Index" asp-route-pageInfo="@Model.PreviousPage">
+                &laquo;
+                Previous Page
+            </a>
+        }
+    </div>
+    <div class="col-sm-6 text-sm-right">
+        @if (Model.NextPage != null)
+        {
+            <a class="btn btn-link" asp-controller="Home" asp-action="Index" asp-route-pageInfo="@Model.NextPage">
+                Next Page
+                &raquo;
+            </a>
+        }
+    </div>
+</div>

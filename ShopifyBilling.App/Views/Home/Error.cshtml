@@ -1,0 +1,30 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2> 
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+else
+{
+    <p>
+        <strong>We could not find a Request ID to track this request.</strong>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    This application is running <strong>Production Mode</strong>, and will not
+    display detailed error information here. The developer can set this app to run
+    in <strong>Development Mode</strong> by setting the
+    <code>ASPNETCORE_ENVIRONMENT</code> environment variable to <strong>
+        <code>Development</code>
+    </strong>.
+</p>

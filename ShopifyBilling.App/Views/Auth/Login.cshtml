@@ -1,0 +1,23 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text/center">
+    <h2>Login with Shopify</h2>
+    <hr />
+</div> 
+
+<form method="post" enctype="application/x-www-form-urlencoded" asp-controller="Auth" asp-action="HandleLogin">
+    <div class="form-group">
+        <label for="shop">Your *.myshopify.com domain</label>
+        <input id="shop" name="shop" class="form-control" type="text" value="@Model.ShopDomain" required />
+    </div>
+    @if (Model.ShowError)
+    {
+        <p class="red error">@Model.Error</p>
+    }
+    <button type="submit" class="btn btn-primary">
+        Login
+    </button>
+</form>

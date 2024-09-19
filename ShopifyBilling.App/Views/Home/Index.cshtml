@@ -1,0 +1,32 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<div class="text-center">
+    <h2>Your Orders</h2>
+    <hr />
+</div>
+@await Html.PartialAsync("_PageLinks", Model)
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Order #</th>
+            <th>Date Created</th>
+            <th>Customer Name</th>
+            <th>Line Item Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>@order.Name</td>
+                <td>@order.DateCreated</td>
+                <td>@order.CustomerName</td>
+                <td>@order.LineItemSummary</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@await Html.PartialAsync("_PageLinks", Model)

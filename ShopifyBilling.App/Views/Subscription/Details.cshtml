@@ -1,0 +1,42 @@
+﻿@model SubscriptionViewModel
+@{
+    ViewData["Title"] = "Your Subscription";
+
+    // Format the decimal price to two places, e.g. "14" becomes "14.00"
+    var formattedPrice = "$" + Model.Price.ToString("f2");
+}
+
+<div class="text-center">
+    <h2>Your Subscription Details</h2>
+    <h5>
+        @if (Model.IsTrialing)
+        {
+            <span class="badge badge-pill badge-primary">Free Trial</span>
+        }
+        @if (Model.TestMode)
+        {
+            <span class="badge badge-pill badge-secondary">Test Mode</span>
+        }
+    </h5>
+</div>
+<div>
+    <ul>
+        <li>
+            Plan:
+            @Model.ChargeName
+        </li>
+        <li>
+            Price:
+        </li>
+        <li>
+            @formattedPrice / month
+            Subscribed on: @Model.DateCreated.ToString()
+        </li>
+        @if (Model.IsTrialing)
+        {
+            <li>
+                Trial ends on: @Model.TrialEndsOn.ToString()
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,20 @@
+﻿@model SubscribeViewModel
+@{
+    ViewData["Title"] = "Subscribe";
+}
+
+<div class="text-center">
+    <h2>Activate Subscription</h2>
+    <hr />
+</div>
+
+<form method="post" asp-controller="Subscription" asp-action="HandleStartSubscription">
+    <p>Thanks for installing this Shopify app! You must accept a recurring monthly subscription to continue.</p>
+    @if (Model.ShowError)
+    {
+        <p class="red error">@Model.Error</p>
+    }
+    <button type="submit" class="btn btn-primary">
+        Subscribe
+    </button>
+</form>
