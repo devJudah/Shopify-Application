@@ -28,3 +28,20 @@ This application interacts with Shopify’s API, allowing the app to manage reso
 ### 4. Validation and Authorization
 - To secure communication, the app includes:
 - OAuth Authentication: Ensures that only authenticated Shopify stores can interact with the app.
+
+### 5. Database Management with Entity Framework Core & Secure Configuration Using .NET User Secrets
+The application leverages .NET's built-in User Secrets functionality to securely store sensitive information such as:
+- Shopify API credentials (API key, API secret)
+- Database connection strings
+- Other confidential application settings (like tokens, keys)
+
+### 6. Deployment on Microsoft Azure
+- The app is deployed and hosted on Microsoft Azure, taking advantage of Azure’s scalability and security features. Azure App Service is used to host the app, and the SQL database is managed via Azure SQL Database.
+
+## 🛠️ Installation and Setup
+### Prerequisites
+- ASP.NET Core 6.0+
+- Entity Framework Core
+- SQL Server
+- Shopify Partner Account (for app registration)
+- Azure Account (for deployment)
